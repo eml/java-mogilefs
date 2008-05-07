@@ -1,0 +1,19 @@
+Java client library for MogileFS (http://www.danga.com/mogilefs/). Code
+is mostly a copy of the perl client.
+
+Choose one of the classes in com.guba.mogilefs that implements
+the MogileFS interface:
+
+SimpleMogileFSImpl - simplest implementation that holds a single
+	connection to a mogile tracker. Shouldn't be used by
+	multiple threads.
+PooledMogileFSImpl - thread safe implementation that keeps a pool of
+	connections open to the mogile trackers. Excellent for
+	servlets to share.
+LocalFileMogileFSImpl - this implementation doesn't actually talk
+	to mogile servers - it just acts like it, but stores things
+	locally. Its useful it you want to test something locally
+	or have a fake local mogile store.
+
+Please send bug reports to Eric Lambrecht <eml@ill.com>.
+
